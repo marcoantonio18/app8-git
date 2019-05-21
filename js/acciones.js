@@ -15,10 +15,11 @@ document.addEventListener("deviceready",onDeviceReady,false);
  function getPosition(){
 	 var options={
 		 enableHighAccuracy: true,
-		 maximum:3600000
+		 maximumAge:3600000
 	 }
 	 
-	 var watchID=navigator.geolocation.getCurrentPosition(onSuccess,onError,options
+	 var watchID=navigator.geolocation.getCurrentPosition(onSuccess,onError,options);
+	
 	 
 	 function onSuccess(position){
 		 
@@ -27,6 +28,6 @@ document.addEventListener("deviceready",onDeviceReady,false);
 	 };
 	 
 	 function onError(error){
-		 alert('code:' +error.code +'\n'+'message:'+error.message+'\n');
+		 alert('code:' + error.code +'\n'+'message:'+error.message+'\n');
 	 }
  }
